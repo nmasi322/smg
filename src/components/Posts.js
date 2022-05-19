@@ -1,24 +1,31 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import PostTableTitle from './PostTableTitle'
+import PostsTable from './PostsTable'
 
 const Posts = () => {
-    let posts
-    let postsUrl = 'https://jsonplaceholder.typicode.com/posts'
-    const url = "http://localhost:3000"
-    axios.get(`${url}/posts`, (req, res)=>{
-        fetch(postsUrl)
-        .then(response => response.json())
-        .then(data => {
-            posts = data
-            res.status(200).send(posts)
-        })
-        .catch(err =>{
-            console.log(err);
-        })
-    })
+    const [posts, setPosts] = useState([])
+    useEffect(()=>{
+        async function getPostData(){
+            try {
+                let postsUrl = 'https://dummyjson.com/posts?limit=5'
+                const {data} = await axios.get(postsUrl)
+                setPosts(data.posts)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getPostData()
+    }, [])
 
   return (
     <div>
-    
+        <PostTableTitle />
+            {   
+                posts.map(item=>{
+                    return <PostsTable id={item.id} owner={item.userId} title={item.title} />
+                })
+            }
     </div>
   )
 }

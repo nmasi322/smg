@@ -1,25 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Card from '../components/Card'
 import Header from '../components/Header'
-import Recent from '../components/Recent'
 import Sidebar from '../components/Sidebar'
-import TableTitle from '../components/TableTitle'
+import Table from '../components/Table'
 import Tags from '../components/Tags'
-import UserDefault from '../components/UserDefault'
-import UserDetails from '../components/UserDetails'
-import Users from '../components/Users'
-import UsersTable from '../components/UsersTable'
+// import UserDefault from '../components/UserDefault'
+// import UserDetails from '../components/UserDetails'
+import UserPostDetails from '../components/UserPostDetails'
 
 const Dashboard = () => {
-    const [user, setUser] = useState(<UserDetails />)
-    let userProfileHandler = ()=>{
-        if (user === <UserDefault />){
-            setUser(<UserDetails />)
-        }
-        if (user === <UserDetails />){
-            setUser(<UserDefault />)
-        }
-    }
   return (
     <div>
         <div className='md:grid grid-cols-5'>
@@ -61,22 +50,13 @@ const Dashboard = () => {
                     </div>
                     <div className='md:grid grid-cols-4 gap-3 mt-16'>
                         <div className='col-span-3'>
-                            <div className='flex text-[#505050]'>
-                                <h2 className='mr-3 border-b-8 rounded-bl border-b-[#9991E5]'>Recent users</h2>
-                                <h2>Recent posts</h2>
-                            </div>
                             <div>
-                                <Users />
-                                {/* <Recent /> */}
-                                {/* <TableTitle />
-                                <UsersTable id="85u58949" title="Mrs" name="Divine Edeh" username="divine_edeh" phone="07049958957" img="/image/Ellipse 8.png" />
-                                <UsersTable id="85u58949" title="Mrs" name="Divine Edeh" username="divine_edeh" phone="07049958957" img="/image/Ellipse 8.png" />
-                                <UsersTable id="85u58949" title="Mrs" name="Divine Edeh" username="divine_edeh" phone="07049958957" img="/image/Ellipse 8.png" /> */}
+                                <Table />
                             </div>
                         </div>
                         <div>
                             <div className='shadow-md rounded-md'>
-                                {user}
+                                <UserPostDetails />
                             </div>
                         </div>
                     </div>

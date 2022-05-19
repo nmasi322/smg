@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TableTitle = () => {
+const PostTableTitle = () => {
   return (
     <div>
         <div className='md:grid grid-cols-10 my-5 text-[#505050]'>
@@ -9,20 +9,17 @@ const TableTitle = () => {
                 <p>ID</p>
             </div>
             <div className='col-span-1'>
-                <p>TITLE</p>
+                <p>OWNER ID</p>
             </div>
             <div className='col-span-4'>
-                <p>NAME</p>
-            </div>
-            <div className='col-span-1'>
-                <p>ID</p>
+                <p>TITLE</p>
             </div>
             <div className='col-span-2'>
-                <p>PHONE</p>
+                <p>PUBLISH DATE</p>
             </div>
         </div>
     </div>
   )
 }
 
-export default TableTitle
+export default PostTableTitle
