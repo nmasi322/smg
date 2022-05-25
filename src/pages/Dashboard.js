@@ -28,7 +28,7 @@ const Dashboard = () => {
             </div>
             <div className='col-span-4'>
                 <Header pageTitle="Dashboard" />
-                <div className='px-9 md:px-16 py-10'>
+                <div className='px-5 md:px-16 py-10'>
                     <div className='md:grid grid-cols-5 gap-3'>
                         <div className='col-span-2'>
                             <div className='md:grid grid-cols-2 gap-3'>

@@ -30,7 +30,7 @@ const SearchPosts = () => {
               <div className='py-4 shadow-lg px-7 md:text-center'>
                 <input className='outline-none rounded-full py-2 px-4 w-72 md:w-96 border border-gray-400' type="search" placeholder="Search any user..." />
               </div>
-              <div className='px-5'>
+              <div className='px-3'>
                 <SearchPost />
               </div>
             </div>

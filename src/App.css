@@ -23,3 +23,15 @@
     border-radius: 8px;
     margin-left: 20px;
 }
+
+@media (max-width: 500px) {
+    .previousBtn{
+        margin-right: 20px;
+    }
+    .nextBtn{
+        margin-left: 20px;
+    }
+    .pageLink{
+        margin-left: 10px;
+    }
+}
