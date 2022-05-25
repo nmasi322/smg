@@ -1,38 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import UserPostDetails from './UserPostDetails';
+import React, { useState } from 'react'
+import Axios from 'axios'
+import UserDetails from './UserDetails';
 
 const UsersTable = ({ users, loading, error }) => {
-    const [clicked, setClicked] = useState(false)
-    const [current, seCurrent] = useState()
-    function handleClicked(id) {
-        console.log(`clicked ${id}`);
-        seCurrent(id)
-        setClicked(true)
-    }
-    useEffect(() => {
-        async function setId() {
-            try {
-                if(clicked){
-                    return <UserPostDetails id={current} />
-                }
+    const [posts, setPosts] = useState();
 
-            } catch (error) {
-                console.log(error);
+    async function handleClicked(id) {
 
-            }
+        // we would implement the api call whenever we clicked on any items....
+        try {
+            const { data } = await Axios.get(`https://dummyjson.com/users/${id}`)
+            setPosts(data);
+        } catch (error) {
+            console.log(error)
         }
-        setId()
-    }, [])
-    
-    
-    
+
+    }
     if (loading) {
         return <>
-            <p className='text-center justify-center items-center mt-20'> Please wait, data is being fetched.....</p>
+            <p className='text-center mt-30'>Data is being fetched please wait......</p>
         </>
     }
     if (error) {
-        return <p className='text-center justify-center items-center mt-20'>{error}</p>
+        return <p className='text-center mt-30 text-red-600'>{error}</p>
     }
     else {
         return (
@@ -42,7 +32,7 @@ const UsersTable = ({ users, loading, error }) => {
 
                         return <div className='hover:cursor-pointer' key={item?.id} onClick={() => handleClicked(item?.id)}>
                             <div className='flex text-[#505050] shadow-md rounded-md px-3 mb-5'>
-                                <div className='md:grid grid-cols-10 my-4 content-start'>
+                                <div className='grid grid-cols-10 my-4 content-start'>
                                     <div className='flex col-span-1'>
                                         <input className='mr-3 mt-[5px] hover:cursor-pointer' type="checkbox" />
                                         <p className='text-[#A8A8A8]'>{item?.id}</p>
@@ -52,7 +42,7 @@ const UsersTable = ({ users, loading, error }) => {
                                     </div>
                                     <div className='col-span-4'>
                                         <div className='flex'>
-                                            <img className='rounded-full mr-3 w-10' src={item?.image} alt="profile image" />
+                                            <img className='rounded-full mr-3 w-10' src={item?.image} alt="profile_image" />
                                             <div className='block'>
                                                 <div className='flex text-[#9991E5]'>
                                                     <p className='mr-1'>{item?.firstName}</p>
@@ -79,6 +69,9 @@ const UsersTable = ({ users, loading, error }) => {
                         </div>
 
                     })
+                }
+                {
+                    posts && Object.keys(posts).length > 0 && <UserDetails user={posts} />
                 }
             </>
 

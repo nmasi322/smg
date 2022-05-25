@@ -1,0 +1,25 @@
+.paginationBtns{
+    color: #9991E5;
+    display: flex;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: -6px 15px 25px 4px rgba(209,209,209,0.75);
+    -webkit-box-shadow: -6px 15px 25px 4px rgba(209,209,209,0.75);
+    -moz-box-shadow: -6px 15px 25px 4px rgba(209,209,209,0.75);
+}
+.previousBtn{
+    margin-right: 30px;
+}
+.nextBtn{
+    border: 1px solid #eaeaea;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 30px;
+}
+.pageLink{
+    border: 1px solid #eaeaea;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-left: 20px;
+}

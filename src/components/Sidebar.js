@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Sidebar = () => {
   return (
     <div>
-      <div class="bg-gradient-to-b from-[#9F96EF] to-[#5F5888] h-[100vh] py-10 px-5 fixed">
+      <div class="bg-gradient-to-b from-[#9F96EF] to-[#5F5888] h-[100vh] py-10 px-5 md:fixed relative">
         <div className='flex'>
           <img className='w-16 roundedd-full mr-5' src='/image/profile.png' />
           <div className='text-white'>
@@ -21,9 +21,9 @@ const Sidebar = () => {
           <div className='mt-7'>
             <p className='text-[#E9E7FF] py-3 border-b border-b-[#e8e8e8]'>DIRECTORY</p>
             <ul>
-              <Link to="/dashboard" className='bg-[#e5e5e5] bg-opacity-50 text-white py-2 w-full block mt-3 px-3'>Dashboard</Link>
-              <Link to="/search-posts" className='text-white py-2 w-full block mt-3 px-3'>Search posts</Link>
-              <Link to="/add-user" className='text-white py-2 w-full block mt-3 px-3'>Add user</Link>
+              <Link to="/" className='hover:bg-[#e5e5e5] hover:bg-opacity-50 text-white py-2 w-full block mt-3 px-3'>Dashboard</Link>
+              <Link to="/search-posts" className='hover:bg-[#e5e5e5] hover:bg-opacity-50 text-white py-2 w-full block mt-3 px-3'>Search posts</Link>
+              <Link to="/add-user" className='hover:bg-[#e5e5e5] hover:bg-opacity-50 text-white py-2 w-full block mt-3 px-3'>Add user</Link>
             </ul>
           </div>
         </div>

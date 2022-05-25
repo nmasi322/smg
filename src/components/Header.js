@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = (props) => {
   return (
-    <div className='shadow-lg w-full flex py-5 px-7 relative'>
+    <div className='border-b border-b-gray-300 w-full flex py-5 px-7'>
         <h2 className='text-[#787878]'>{props.pageTitle}</h2>
         <div className='absolute right-7 flex'>
             <img className='w-6 h-6 mr-7 hover:cursor-pointer' src="/image/vector (2).png" />

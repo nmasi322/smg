@@ -3,7 +3,7 @@ import React from 'react'
 const TableTitle = () => {
   return (
     <div>
-        <div className='md:grid grid-cols-10 my-5 text-[#505050]'>
+        <div className='grid grid-cols-10 my-5 text-[#505050]'>
             <div className='flex col-span-1'>
                 <input className='mr-3 mt-[5px] hover:cursor-pointer' type="checkbox" />
                 <p>ID</p>
